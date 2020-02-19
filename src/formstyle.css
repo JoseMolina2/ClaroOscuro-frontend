@@ -1,0 +1,105 @@
+body{
+    margin:0;
+}
+
+h2{
+   margin-left: 50px; 
+}
+
+.container{
+    position: relative;
+    width:80%;
+    height: 400px;
+    margin-left: 70px;
+}
+
+.column{
+    float: left;
+    width:50%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.margin{
+    margin: 10px 10px;
+}
+
+.buttoncontainer{
+    position: absolute;
+    right: 0px;
+}
+
+.buttoncontainer input{
+    width: 150px;
+    padding:10px;
+    border-radius: 4px;
+    margin: 0 5px;
+}
+
+input{
+    width:300px;
+    padding: 8px;
+}
+
+select{
+    width:300px;
+    padding:8px;
+}
+
+textarea{
+    width:300px;
+    padding:8px;
+    resize: none;
+}
+
+@media screen and (max-width:500px){
+    .column{
+        width:100%;
+    }
+
+    input{
+        width: 100%;
+        margin: 8px 0;
+        display: inline-block;
+    }
+
+    select{
+        width:100%;
+        margin: 8px 0;
+        display: inline-block;
+    }
+
+
+   textarea{
+    width:100%;
+    margin: 8px 0;
+    display: inline-block;
+   }
+
+    .container{
+        width: 100%;
+        margin:0;
+    }
+
+    .buttoncontainer{
+        width:100%;
+        position: initial;
+    }
+
+    .buttoncontainer input{
+        width:100%;
+        margin: 8px 0;
+        display: inline-block;
+    }
+    
+    button {
+        width:100%;
+        margin: 8px 0;
+        display: inline-block;
+    }
+}
+
