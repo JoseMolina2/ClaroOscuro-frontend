@@ -57,10 +57,6 @@ textarea{
 }
 
 @media screen and (max-width:500px){
-    .column{
-        width:100%;
-    }
-
     input{
         width: 100%;
         margin: 8px 0;
@@ -79,6 +75,8 @@ textarea{
     margin: 8px 0;
     display: inline-block;
    }
+
+   .column{width:100%;}
 
     .container{
         width: 100%;

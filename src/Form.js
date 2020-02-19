@@ -187,27 +187,34 @@ class Form extends React.Component {
             observaciones: ''
         };
 
+        this._isMounted = false;
         this.myChangeHandler = this.myChangeHandler.bind(this);
         this.mySubmitHandler = this.mySubmitHandler.bind(this);
     }
 
     componentDidMount() {
+        this._isMounted = true;
         window.addEventListener('resize', this.handleWindowSizeChange);
     }
 
+    componentWillUnmount() {
+        this._isMounted = false;
+    }
+
     handleWindowSizeChange = () => {
-        this.setState({ width: window.innerWidth });
+        if (this._isMounted) this.setState({ width: window.innerWidth });
+
     };
 
     myChangeHandler(event) {
         let nam = event.target.name;
         let val = event.target.value;
-        this.setState({ [nam]: val });
+        if (this._isMounted) this.setState({ [nam]: val });
         if (nam === 'fechanacimiento') {
             const hoy = new Date();
             const fechanacimiento = new Date(val);
             const edad = hoy.getFullYear() - (fechanacimiento.getFullYear() + 1);
-            this.setState({ edad: edad.toString() });
+            if (this._isMounted) this.setState({ edad: edad.toString() });
         }
     }
 
