@@ -63,23 +63,6 @@ class Grid extends React.Component {
         this._isMounted = false;
     }
 
-    getRows(rows) {
-        if (rows) {
-            rows.map(row => {
-                return (
-                    <tr>
-                        <td>{row.nombre}</td>
-                        <td>{row.identidad}</td>
-                        <td>{row.sexo}</td>
-                        <td>{row.fechanacimiento}</td>
-                        <td>{row.edad}</td>
-                        <td>{row.observaciones}</td>
-                    </tr>
-                );
-            });
-        }
-    }
-
     render() {
         let table = '';
         const rows = this.state.data;
